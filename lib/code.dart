@@ -11,6 +11,11 @@ class code extends StatefulWidget {
 class _codeState extends State<code> {
   String d = "0";
   double ans = 0.00;
+  var c1=Colors.grey.shade300;
+  var t1=Colors.black;
+  var c2 = Colors.orange;
+  var t2 = Colors.white;
+  int gst=0;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -92,39 +97,57 @@ class _codeState extends State<code> {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceAround,
                                 children: [
-                                  Container(
-                                    margin: EdgeInsets.only(right: 2),
-                                    height: 50,
-                                    width: 80,
-                                    child: Center(
-                                      child: Text(
-                                        "3%",
-                                        style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 15,
+                                  InkWell(
+                                    onTap: (){
+                                      setState(() {
+                                        gst = 3;
+                                      });
+                                    },
+                                    child: Container(
+                                      margin: EdgeInsets.only(right: 2),
+                                      height: 50,
+                                      width: 80,
+                                      child: Center(
+                                        child: Text(
+                                          "3%",
+                                          style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 15,
+                                          ),
                                         ),
                                       ),
+                                      decoration: BoxDecoration(
+                                        color: c1,
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(20))),
                                     ),
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(20))),
                                   ),
-                                  Container(
-                                    margin: EdgeInsets.only(right: 2),
-                                    height: 50,
-                                    width: 80,
-                                    child: Center(
-                                      child: Text(
-                                        "5%",
-                                        style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 15,
+                                  InkWell(
+                                    onTap: (){
+
+                                      setState(() {
+                                        gst=5;
+
+                                      });
+                                    },
+                                    child: Container(
+                                      margin: EdgeInsets.only(right: 2),
+                                      height: 50,
+                                      width: 80,
+                                      child: Center(
+                                        child: Text(
+                                          "5%",
+                                          style: TextStyle(
+                                            color: t1,
+                                            fontSize: 15,
+                                          ),
                                         ),
                                       ),
+                                      decoration: BoxDecoration(
+                                        color: c1,
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(20))),
                                     ),
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(20))),
                                   ),
                                   Container(
                                     margin: EdgeInsets.only(right: 2),
