@@ -9,14 +9,23 @@ class code extends StatefulWidget {
 }
 
 class _codeState extends State<code> {
+
   String d = "0";
+  double gst = 0.00;
   double ans = 0.00;
+
   int v = 0;
-  var c1 = Colors.grey.shade300;
-  var t1 = Colors.black;
-  var c2 = Colors.orange;
-  var t2 = Colors.white;
-  int gst = 0;
+  var c;
+  var c1=Colors.grey.shade300;
+  var c2=Colors.grey.shade300;
+  var c3=Colors.grey.shade300;
+  var c4=Colors.grey.shade300;
+  var c5=Colors.grey.shade300;
+  var t1=Colors.black;
+  var t2=Colors.black;
+  var t3=Colors.black;
+  var t4=Colors.black;
+  var t5=Colors.black;
 
   @override
   Widget build(BuildContext context) {
@@ -103,7 +112,18 @@ class _codeState extends State<code> {
                                     onTap: () {
                                       v = int.parse(d);
                                       setState(() {
-                                        ans = (v * 3) / 100;
+                                        gst = (v * 3) / 100 ;
+                                        ans=gst+v;
+                                        c1=Colors.deepOrange;
+                                        t1=Colors.white;
+                                        c2=Colors.grey.shade300;
+                                        t2=Colors.black;
+                                        c3=Colors.grey.shade300;
+                                        t3=Colors.black;
+                                        c4=Colors.grey.shade300;
+                                        t4=Colors.black;
+                                        c5=Colors.grey.shade300;
+                                        t5=Colors.black;
                                       });
                                     },
                                     child: Container(
@@ -113,31 +133,6 @@ class _codeState extends State<code> {
                                       child: Center(
                                         child: Text(
                                           "3%",
-                                          style: TextStyle(
-                                            color: Colors.black,
-                                            fontSize: 15,
-                                          ),
-                                        ),
-                                      ),
-                                      decoration: BoxDecoration(
-                                          color: c1,
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(20))),
-                                    ),
-                                  ),
-                                  InkWell(
-                                    onTap: () {
-                                      setState(() {
-                                        ans = (v * 5) / 100;
-                                      });
-                                    },
-                                    child: Container(
-                                      margin: EdgeInsets.only(right: 2),
-                                      height: 50,
-                                      width: 80,
-                                      child: Center(
-                                        child: Text(
-                                          "5%",
                                           style: TextStyle(
                                             color: t1,
                                             fontSize: 15,
@@ -153,7 +148,54 @@ class _codeState extends State<code> {
                                   InkWell(
                                     onTap: () {
                                       setState(() {
-                                        ans=(v*12) / 100;
+                                        gst = (v * 5) / 100;
+                                        ans=gst+v;
+                                        c1=Colors.grey.shade300;
+                                        t1=Colors.black;
+                                        c2=Colors.deepOrange;
+                                        t2=Colors.white;
+                                        c3=Colors.grey.shade300;
+                                        t3=Colors.black;
+                                        c4=Colors.grey.shade300;
+                                        t4=Colors.black;
+                                        c5=Colors.grey.shade300;
+                                        t5=Colors.black;
+                                      });
+                                    },
+                                    child: Container(
+                                      margin: EdgeInsets.only(right: 2),
+                                      height: 50,
+                                      width: 80,
+                                      child: Center(
+                                        child: Text(
+                                          "5%",
+                                          style: TextStyle(
+                                            color: t2,
+                                            fontSize: 15,
+                                          ),
+                                        ),
+                                      ),
+                                      decoration: BoxDecoration(
+                                          color:c2,
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(20))),
+                                    ),
+                                  ),
+                                  InkWell(
+                                    onTap: () {
+                                      setState(() {
+                                        gst=(v*12) / 100;
+                                        ans=gst+v;
+                                        c1=Colors.grey.shade300;
+                                        t1=Colors.black;
+                                        c2=Colors.grey.shade300;
+                                        t2=Colors.black;
+                                        c3=Colors.deepOrange;
+                                        t3=Colors.white;
+                                        c4=Colors.grey.shade300;
+                                        t4=Colors.black;
+                                        c5=Colors.grey.shade300;
+                                        t5=Colors.black;
                                       });
                                     },
                                     child: Container(
@@ -164,12 +206,13 @@ class _codeState extends State<code> {
                                         child: Text(
                                           "12%",
                                           style: TextStyle(
-                                            color: Colors.black,
+                                            color: t3,
                                             fontSize: 15,
                                           ),
                                         ),
                                       ),
                                       decoration: BoxDecoration(
+                                        color: c3,
                                           borderRadius: BorderRadius.all(
                                               Radius.circular(20))),
                                     ),
@@ -177,7 +220,18 @@ class _codeState extends State<code> {
                                   InkWell(
                                     onTap: () {
                                       setState(() {
-                                        ans = (v * 18) / 100;
+                                        gst = (v * 18) / 100;
+                                        ans=gst+v;
+                                        c1=Colors.grey.shade300;
+                                        t1=Colors.black;
+                                        c2=Colors.grey.shade300;
+                                        t2=Colors.black;
+                                        c3=Colors.grey.shade300;
+                                        t3=Colors.black;
+                                        c4=Colors.deepOrange;
+                                        t4=Colors.white;
+                                        c5=Colors.grey.shade300;
+                                        t5=Colors.black;
                                       });
                                     },
                                     child: Container(
@@ -188,12 +242,13 @@ class _codeState extends State<code> {
                                         child: Text(
                                           "18%",
                                           style: TextStyle(
-                                            color: Colors.black,
+                                            color:t4,
                                             fontSize: 15,
                                           ),
                                         ),
                                       ),
                                       decoration: BoxDecoration(
+                                        color: c4,
                                           borderRadius: BorderRadius.all(
                                               Radius.circular(20))),
                                     ),
@@ -201,7 +256,18 @@ class _codeState extends State<code> {
                                   InkWell(
                                     onTap: () {
                                       setState(() {
-                                        ans = (v * 25) / 100;
+                                        gst = (v * 25) / 100;
+                                        ans=gst+v;
+                                        c1=Colors.grey.shade300;
+                                        t1=Colors.black;
+                                        c2=Colors.grey.shade300;
+                                        t2=Colors.black;
+                                        c3=Colors.grey.shade300;
+                                        t3=Colors.black;
+                                        c4=Colors.grey.shade300;
+                                        t4=Colors.black;
+                                        c5=Colors.deepOrange;
+                                        t5=Colors.white;
                                       });
                                     },
                                     child: Container(
@@ -212,12 +278,13 @@ class _codeState extends State<code> {
                                         child: Text(
                                           "25%",
                                           style: TextStyle(
-                                            color: Colors.black,
+                                            color: t5,
                                             fontSize: 15,
                                           ),
                                         ),
                                       ),
                                       decoration: BoxDecoration(
+                                        color: c5,
                                           borderRadius: BorderRadius.all(
                                               Radius.circular(20))),
                                     ),
@@ -611,6 +678,16 @@ class _codeState extends State<code> {
                             setState(() {
                               d = "0";
                               ans = 0;
+                              c1=Colors.grey.shade300;
+                              t1=Colors.black;
+                              c2=Colors.grey.shade300;
+                              t2=Colors.black;
+                              c3=Colors.grey.shade300;
+                              t3=Colors.black;
+                              c4=Colors.grey.shade300;
+                              t4=Colors.black;
+                              c5=Colors.grey.shade300;
+                              t5=Colors.black;
                             });
                           },
                           child: Container(
@@ -639,7 +716,7 @@ class _codeState extends State<code> {
                             });
                           },
                           child: Container(
-                            height: 90,
+                            height: 200,
                             width: 90,
                             decoration: BoxDecoration(
                               color: Color(0xffff6b00),
