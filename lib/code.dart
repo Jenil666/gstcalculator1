@@ -11,11 +11,13 @@ class code extends StatefulWidget {
 class _codeState extends State<code> {
   String d = "0";
   double ans = 0.00;
-  var c1=Colors.grey.shade300;
-  var t1=Colors.black;
+  int v = 0;
+  var c1 = Colors.grey.shade300;
+  var t1 = Colors.black;
   var c2 = Colors.orange;
   var t2 = Colors.white;
-  int gst=0;
+  int gst = 0;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -98,9 +100,10 @@ class _codeState extends State<code> {
                                     MainAxisAlignment.spaceAround,
                                 children: [
                                   InkWell(
-                                    onTap: (){
+                                    onTap: () {
+                                      v = int.parse(d);
                                       setState(() {
-                                        gst = 3;
+                                        ans = (v * 3) / 100;
                                       });
                                     },
                                     child: Container(
@@ -117,17 +120,15 @@ class _codeState extends State<code> {
                                         ),
                                       ),
                                       decoration: BoxDecoration(
-                                        color: c1,
+                                          color: c1,
                                           borderRadius: BorderRadius.all(
                                               Radius.circular(20))),
                                     ),
                                   ),
                                   InkWell(
-                                    onTap: (){
-
+                                    onTap: () {
                                       setState(() {
-                                        gst=5;
-
+                                        ans = (v * 5) / 100;
                                       });
                                     },
                                     child: Container(
@@ -144,61 +145,82 @@ class _codeState extends State<code> {
                                         ),
                                       ),
                                       decoration: BoxDecoration(
-                                        color: c1,
+                                          color: c1,
                                           borderRadius: BorderRadius.all(
                                               Radius.circular(20))),
                                     ),
                                   ),
-                                  Container(
-                                    margin: EdgeInsets.only(right: 2),
-                                    height: 50,
-                                    width: 80,
-                                    child: Center(
-                                      child: Text(
-                                        "12%",
-                                        style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 15,
+                                  InkWell(
+                                    onTap: () {
+                                      setState(() {
+                                        ans=(v*12) / 100;
+                                      });
+                                    },
+                                    child: Container(
+                                      margin: EdgeInsets.only(right: 2),
+                                      height: 50,
+                                      width: 80,
+                                      child: Center(
+                                        child: Text(
+                                          "12%",
+                                          style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 15,
+                                          ),
                                         ),
                                       ),
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(20))),
                                     ),
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(20))),
                                   ),
-                                  Container(
-                                    margin: EdgeInsets.only(right: 2),
-                                    height: 50,
-                                    width: 80,
-                                    child: Center(
-                                      child: Text(
-                                        "18%",
-                                        style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 15,
+                                  InkWell(
+                                    onTap: () {
+                                      setState(() {
+                                        ans = (v * 18) / 100;
+                                      });
+                                    },
+                                    child: Container(
+                                      margin: EdgeInsets.only(right: 2),
+                                      height: 50,
+                                      width: 80,
+                                      child: Center(
+                                        child: Text(
+                                          "18%",
+                                          style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 15,
+                                          ),
                                         ),
                                       ),
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(20))),
                                     ),
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(20))),
                                   ),
-                                  Container(
-                                    margin: EdgeInsets.only(right: 2),
-                                    height: 50,
-                                    width: 80,
-                                    child: Center(
-                                      child: Text(
-                                        "25%",
-                                        style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 15,
+                                  InkWell(
+                                    onTap: () {
+                                      setState(() {
+                                        ans = (v * 25) / 100;
+                                      });
+                                    },
+                                    child: Container(
+                                      margin: EdgeInsets.only(right: 2),
+                                      height: 50,
+                                      width: 80,
+                                      child: Center(
+                                        child: Text(
+                                          "25%",
+                                          style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 15,
+                                          ),
                                         ),
                                       ),
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(20))),
                                     ),
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(20))),
                                   ),
                                 ],
                               ),
@@ -215,24 +237,26 @@ class _codeState extends State<code> {
               height: 20,
             ),
             Container(
-              margin: EdgeInsets.only(left: 15,right: 15),
+              margin: EdgeInsets.only(left: 15, right: 15),
               height: 40,
               width: double.infinity,
               color: Colors.grey.shade300,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Text("FINAL PRICE",
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.black,
+                  Text(
+                    "FINAL PRICE",
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.black,
+                    ),
                   ),
-                  ),
-                  Text("$ans",
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.black,
-                  ),
+                  Text(
+                    "$ans",
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.black,
+                    ),
                   ),
                 ],
               ),
@@ -308,16 +332,13 @@ class _codeState extends State<code> {
                           ),
                         ),
                         InkWell(
-                          onTap: (){
+                          onTap: () {
                             setState(() {
-                              if(d=="0")
-                                {
-                                  d="4";
-                                }
-                              else
-                                {
-                                  d=d+"4";
-                                }
+                              if (d == "0") {
+                                d = "4";
+                              } else {
+                                d = d + "4";
+                              }
                             });
                           },
                           child: Container(
@@ -335,16 +356,13 @@ class _codeState extends State<code> {
                           ),
                         ),
                         InkWell(
-                          onTap: (){
+                          onTap: () {
                             setState(() {
-                              if(d=="0")
-                                {
-                                  d="1";
-                                }
-                              else
-                                {
-                                  d=d+"1";
-                                }
+                              if (d == "0") {
+                                d = "1";
+                              } else {
+                                d = d + "1";
+                              }
                             });
                           },
                           child: Container(
@@ -362,15 +380,12 @@ class _codeState extends State<code> {
                           ),
                         ),
                         InkWell(
-                          onTap: (){
+                          onTap: () {
                             setState(() {
-                              if(d=="0")
-                              {
-                                d="00";
-                              }
-                              else
-                              {
-                                d=d+"00";
+                              if (d == "0") {
+                                d = "00";
+                              } else {
+                                d = d + "00";
                               }
                             });
                           },
@@ -394,17 +409,14 @@ class _codeState extends State<code> {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         InkWell(
-                          onTap: (){
-                               setState((){
-                                 if(d=="0")
-                                   {
-                                     d="8";
-                                   }
-                                 else
-                                   {
-                                     d=d+"8";
-                                   }
-              });
+                          onTap: () {
+                            setState(() {
+                              if (d == "0") {
+                                d = "8";
+                              } else {
+                                d = d + "8";
+                              }
+                            });
                           },
                           child: Container(
                             height: 60,
@@ -421,16 +433,13 @@ class _codeState extends State<code> {
                           ),
                         ),
                         InkWell(
-                          onTap: (){
+                          onTap: () {
                             setState(() {
-                                if(d=="0")
-                                {
-                                  d="5";
-                                }
-                                else
-                                {
-                                  d=d+"5";
-                                }
+                              if (d == "0") {
+                                d = "5";
+                              } else {
+                                d = d + "5";
+                              }
                             });
                           },
                           child: Container(
@@ -448,15 +457,12 @@ class _codeState extends State<code> {
                           ),
                         ),
                         InkWell(
-                          onTap: (){
+                          onTap: () {
                             setState(() {
-                              if(d=="0")
-                              {
-                                d="2";
-                              }
-                              else
-                              {
-                                d=d+"2";
+                              if (d == "0") {
+                                d = "2";
+                              } else {
+                                d = d + "2";
                               }
                             });
                           },
@@ -475,15 +481,12 @@ class _codeState extends State<code> {
                           ),
                         ),
                         InkWell(
-                          onTap: (){
+                          onTap: () {
                             setState(() {
-                              if(d=="0")
-                              {
-                                d="0";
-                              }
-                              else
-                              {
-                                d=d+"0";
+                              if (d == "0") {
+                                d = "0";
+                              } else {
+                                d = d + "0";
                               }
                             });
                           },
@@ -507,15 +510,12 @@ class _codeState extends State<code> {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         InkWell(
-                          onTap: (){
+                          onTap: () {
                             setState(() {
-                              if(d=="0")
-                              {
-                                d="9";
-                              }
-                              else
-                              {
-                                d=d+"9";
+                              if (d == "0") {
+                                d = "9";
+                              } else {
+                                d = d + "9";
                               }
                             });
                           },
@@ -534,15 +534,12 @@ class _codeState extends State<code> {
                           ),
                         ),
                         InkWell(
-                          onTap: (){
+                          onTap: () {
                             setState(() {
-                              if(d=="0")
-                              {
-                                d="6";
-                              }
-                              else
-                              {
-                                d=d+"6";
+                              if (d == "0") {
+                                d = "6";
+                              } else {
+                                d = d + "6";
                               }
                             });
                           },
@@ -561,15 +558,12 @@ class _codeState extends State<code> {
                           ),
                         ),
                         InkWell(
-                          onTap: (){
+                          onTap: () {
                             setState(() {
-                              if(d=="0")
-                              {
-                                d="3";
-                              }
-                              else
-                              {
-                                d=d+"3";
+                              if (d == "0") {
+                                d = "3";
+                              } else {
+                                d = d + "3";
                               }
                             });
                           },
@@ -588,9 +582,9 @@ class _codeState extends State<code> {
                           ),
                         ),
                         InkWell(
-                          onTap: (){
+                          onTap: () {
                             setState(() {
-                                d=d+".";
+                              d = d + ".";
                             });
                           },
                           child: Container(
@@ -613,9 +607,10 @@ class _codeState extends State<code> {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         InkWell(
-                          onTap: (){
+                          onTap: () {
                             setState(() {
-                              d="0";
+                              d = "0";
+                              ans = 0;
                             });
                           },
                           child: Container(
@@ -637,19 +632,26 @@ class _codeState extends State<code> {
                             ),
                           ),
                         ),
-                        Container(
-                          height: 200,
-                          width: 90,
-                          decoration: BoxDecoration(
-                            color: Color(0xffff6b00),
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(100)),
-                          ),
-                          child: Center(
-                            child: Icon(
-                              Icons.dangerous,
-                              size: 30,
-                              color: Colors.white,
+                        InkWell(
+                          onTap: (){
+                            setState(() {
+                              d = d.substring(0, d.length - 1);
+                            });
+                          },
+                          child: Container(
+                            height: 90,
+                            width: 90,
+                            decoration: BoxDecoration(
+                              color: Color(0xffff6b00),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(100)),
+                            ),
+                            child: Center(
+                              child: Icon(
+                                Icons.dangerous,
+                                size: 30,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                         ),
